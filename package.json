@@ -1,0 +1,24 @@
+{
+  "name": "csplay",
+  "version": "0.0.1",
+  "description": "Play with the content security policy and inline styles",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js"
+  },
+  "keywords": [
+    "csp",
+    "content-security-policy",
+    "inline-styles"
+  ],
+  "author": "Craig Bilner",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "koa": "^1.1.1",
+    "koa-common": "^1.2.0",
+    "koa-hbs": "^0.7.0",
+    "radium": "^0.14.3",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2"
+  }
+}
