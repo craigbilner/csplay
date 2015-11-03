@@ -10,7 +10,6 @@ export class App extends Component {
   }
 
   changeMyColour() {
-    console.log('changing colour');
     this.setState({
       colour: `#${(~~(Math.random() * (1 << 24))).toString(16)}`
     });
