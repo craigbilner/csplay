@@ -20,9 +20,17 @@ app.use(hbs.middleware({
   viewPath: './src/views'
 }));
 
-const csp = [
+const cspNuclear = [
   'default-src \'none\'',
   'script-src \'self\'',
+  'connect-src \'self\'',
+  'img-src \'self\'',
+  'style-src \'self\''
+];
+
+const cspScript = [
+  'default-src \'none\'',
+  'script-src \'self\' \'unsafe-eval\'',
   'connect-src \'self\'',
   'img-src \'self\'',
   'style-src \'self\''
@@ -33,12 +41,18 @@ router.get('/', function *() {
 });
 
 router.get('/nuclear', function *() {
-  this.set('Content-Security-Policy', csp.join(';'));
+  this.set('Content-Security-Policy', cspNuclear.join(';'));
 
   yield this.render(HW_VIEW, HW_OPTIONS);
 });
 
 router.get('/evil', function *() {
+  yield this.render(HW_VIEW, HW_OPTIONS);
+});
+
+router.get('/read-the-script', function *() {
+  this.set('Content-Security-Policy', cspScript.join(';'));
+
   yield this.render(HW_VIEW, HW_OPTIONS);
 });
 
