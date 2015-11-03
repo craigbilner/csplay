@@ -36,6 +36,14 @@ const cspScript = [
   'style-src \'self\''
 ];
 
+const cspHash = [
+  'default-src \'none\'',
+  'script-src \'self\'',
+  'connect-src \'self\'',
+  'img-src \'self\'',
+  'style-src \'sha256-BQ5eA/mw6jES31KSfh/A55TC7nzftLBWpZBzzDfwUrA=\''
+];
+
 router.get('/', function *() {
   yield this.render('app');
 });
@@ -52,6 +60,12 @@ router.get('/evil', function *() {
 
 router.get('/read-the-script', function *() {
   this.set('Content-Security-Policy', cspScript.join(';'));
+
+  yield this.render(HW_VIEW, HW_OPTIONS);
+});
+
+router.get('/hashtag-just-sayin', function *() {
+  this.set('Content-Security-Policy', cspHash.join(';'));
 
   yield this.render(HW_VIEW, HW_OPTIONS);
 });
