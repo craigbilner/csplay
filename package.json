@@ -24,6 +24,7 @@
     "koa": "^1.1.1",
     "koa-common": "^1.2.0",
     "koa-hbs": "^0.7.0",
+    "koa-router": "^5.2.3",
     "radium": "^0.14.3",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
