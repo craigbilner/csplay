@@ -1,8 +1,8 @@
 const koa = require('koa');
 const app = koa();
-const React = require('react');
-const ReactDOMServer = require('react-dom/server');
-const AppComponent = require('./src/components/app/app');
+const { createElement } = require('react');
+const { renderToString } = require('react-dom/server');
+const { App } = require('./src/components/app/app');
 const hbs = require('koa-hbs');
 const common = require('koa-common');
 
@@ -26,7 +26,7 @@ app.use(hbs.middleware({
 }));
 
 app.use(function *() {
-  const html = ReactDOMServer.renderToString(React.createElement(AppComponent));
+  const html = renderToString(createElement(App));
   yield this.render('app', {
     mainPlaceholder: html
   });

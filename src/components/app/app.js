@@ -1,8 +1,7 @@
 import React from 'react';
-import radium from 'radium';
 
-export default radium(() => (
+export const App = () => (
   <div style={{color: 'red'}}>
     Hello world!
   </div>
-));
+);
