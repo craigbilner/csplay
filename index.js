@@ -44,6 +44,14 @@ const cspHash = [
   'style-src \'sha256-BQ5eA/mw6jES31KSfh/A55TC7nzftLBWpZBzzDfwUrA=\''
 ];
 
+const cspNonce = [
+  'default-src \'none\'',
+  'script-src \'self\'',
+  'connect-src \'self\'',
+  'img-src \'self\'',
+  'style-src \'nonce-Nc3n83cnSAd3wc3Sasdfn939hc3\''
+];
+
 router.get('/', function *() {
   yield this.render('app');
 });
@@ -66,6 +74,12 @@ router.get('/read-the-script', function *() {
 
 router.get('/hashtag-just-sayin', function *() {
   this.set('Content-Security-Policy', cspHash.join(';'));
+
+  yield this.render(HW_VIEW, HW_OPTIONS);
+});
+
+router.get('/crypto-once', function *() {
+  this.set('Content-Security-Policy', cspNonce.join(';'));
 
   yield this.render(HW_VIEW, HW_OPTIONS);
 });
