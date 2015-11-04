@@ -22,12 +22,12 @@ result: webpack built client script can run - the state can change the style but
 
 ## \#justsayin
 
-policy: script-src \<hash\> (echo -n "color:red;" | openssl dgst -sha256 -binary | openssl enc -base64)
+policy: style-src \<hash\> (echo -n "color:red;" | openssl dgst -sha256 -binary | openssl enc -base64)
 
 result: umm...just the same in [Chrome](https://code.google.com/p/chromium/issues/detail?id=546106) and Safari...works in Firefox though :-)
 
 ## crypto once
 
-policy script-src nonce-$random
+policy style-src nonce-$random
 
 result: allows style block to run
