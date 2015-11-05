@@ -31,7 +31,7 @@ result:
 
 ## \#justsayin
 
-policy: script-src \<hash\> (echo -n "color:red;" | openssl dgst -sha256 -binary | openssl enc -base64)
+policy: style-src \<hash\> (echo -n "color:red;" | openssl dgst -sha256 -binary | openssl enc -base64)
 
 result:
 
@@ -40,7 +40,7 @@ result:
 
 ## crypto once
 
-policy script-src nonce-$random
+policy style-src nonce-$random
 
 result:
 
