@@ -13,6 +13,22 @@
 <a href="/">home</a>
 
 <div id="main">{{{mainPlaceholder}}}</div>
+<template id="template">
+    <style nonce="Nc3n83cnSAd3wc3Sasdfn939hc3">
+        div {
+            color: blue;
+        }
+    </style>
+    <div>
+        shadow DOM no inline style
+    </div>
+    <div  style="color: purple;">
+        shadow DOM with inline style
+    </div>
+</template>
+
+<div id="host"></div>
 </body>
 <script src="bundle.js"></script>
+<script src="shadow-init.js"></script>
 </html>

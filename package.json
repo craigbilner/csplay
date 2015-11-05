@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "npm run build && npm start",
     "start": "babel-node index.js",
-    "build": "webpack",
+    "build": "webpack && cp ./src/shadow-init.js ./dist",
     "watch": "webpack --watch"
   },
   "keywords": [
